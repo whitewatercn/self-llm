@@ -146,8 +146,9 @@ dataset_id = 'AI-ModelScope/LaTeX_OCR'
 subset_name = 'default'
 split = 'train'
 
-dataset_dir = 'LaTeX_OCR'
-csv_path = './latex_ocr_train.csv'
+cache_dir = './dataset-tmp/latex_ocr_data'
+dataset_dir = './dataset/latex_ocr_data'
+csv_path = './dataset/latex_ocr_data/latex_ocr_train.csv'
 
 
 # 检查目录是否已存在
