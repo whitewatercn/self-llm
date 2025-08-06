@@ -206,9 +206,9 @@ csv2json.py：
 import pandas as pd
 import json
 
-csv_path = './latex_ocr_train.csv'
-train_json_path = './latex_ocr_train.json'
-val_json_path = './latex_ocr_val.json'
+csv_path = './dataset/latex_ocr_data/latex_ocr_train.csv'
+train_json_path = './dataset/latex_ocr_data/latex_ocr_train.json'
+val_json_path = './dataset/latex_ocr_data/latex_ocr_val.json'
 df = pd.read_csv(csv_path)
 # Create conversation format
 conversations = []
