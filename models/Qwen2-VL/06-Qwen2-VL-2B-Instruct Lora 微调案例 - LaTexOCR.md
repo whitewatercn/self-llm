@@ -137,7 +137,7 @@ data2csv.py：
 
 ```python
 # 导入所需的库
-from modelscope.msdatasets import MsDataset
+from modelscope import MsDataset
 import os
 import pandas as pd
 
@@ -146,14 +146,15 @@ dataset_id = 'AI-ModelScope/LaTeX_OCR'
 subset_name = 'default'
 split = 'train'
 
-dataset_dir = 'LaTeX_OCR'
-csv_path = './latex_ocr_train.csv'
+cache_dir = './dataset-tmp/latex_ocr_data'
+dataset_dir = './dataset/latex_ocr_data'
+csv_path = './dataset-tmp/latex_ocr_data/latex_ocr_train.csv'
 
 
 # 检查目录是否已存在
 if not os.path.exists(dataset_dir):
     # 从modelscope下载COCO 2014图像描述数据集
-    ds =  MsDataset.load(dataset_id, subset_name=subset_name, split=split)
+    ds =  MsDataset.load(dataset_id, subset_name=subset_name, cache_dir=cache_dir, split=split)
     print(len(ds))
     # 设置处理的图片数量上限
     total = min(MAX_DATA_NUMBER, len(ds))
